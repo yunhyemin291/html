@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+           height: 2000px;
+        }        
+        .bg,.front{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: black;
+        }
+        .bg{
+            background-image: url(../day30/dog.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: inline-block;
+            position: fixed;
+            z-index: 1;
+        }
+        .front{
+            opacity: 0.7;
+            z-index: 2;
+        }
+        table{
+            position: absolute;
+            top: 20%;
+            left:10%;            
+            color: white;
+            z-index: 10;
+            transform: scale(1.2,1.2);
+        }
+        td{
+            text-align: center;
+            width: 400px;
+            height: 70px;
+        }
+        input{
+            width: 300px;
+            height: 50px;
+        }
+        .gender{
+            width: 40px;
+            height: 20px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+        <table>
+            <tr><th colspan="2"><h1 title="회원가입양식">회원가입</h1></th></tr>
+            <form>
+            <tr><td><input type="text" name="id" placeholder="아이디"></td></tr>
+            <tr><td><input type="password" name="pw" placeholder="비밀번호"></td></tr>
+            <tr><td><input type="password" name="pw2" placeholder="비밀번호 확인"></td></tr>
+            <tr><td><input type="email" name="email" placeholder="이메일"></td></tr>
+            <tr>
+                <td>
+                <input type="radio" class="gender" name="gender" value="male" id= "male" checked id="male">
+                <label for="male">남성</label>
+                <input type="radio" class="gender" name="gender" value="female"id= "female" >
+                <label for = "female">여성</label>
+                </td>
+            </tr>
+                <tr><td><input type="number" name="phone1" placeholder="전화번호"></td>
+            </tr>
+        <tfoot>
+            <tr><th colspan="2"><input type="submit" value="회원가입"></th></tr>
+        </tfoot>
+            </form>
+        </table><div class="bg">
+    <div class="front">
+    </div>
+</div>
+</body>
+</html>
