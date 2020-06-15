@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style></style>
+</head>
+<body>
+    <button id="add">추가</button><br>
+    <div class="res">
+    </div>
+    
+    <script>
+        $(function(){
+            $('#add').click(function(){
+                var str= $('.res').html();
+                str = str +'<input type="text"><input type="submit" value="제출"><br>';
+                $('.res').html(str);
+            })
+            
+
+        })
+    </script>
+</body>
+</html>

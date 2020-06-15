@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+        .border-red{
+            border: 2px solid red;
+        }
+
+    </style>
+    
+    
+</head>
+<body>
+    <button id=prev>이전</button>
+    <button id="next">다음</button>
+    <div class="res">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+        $(function(){
+            $('.res').children().first()
+            /* css()메소드에서 여러 속성의 값을 한번에 변경하려면 
+            {'속성':'값','속성':'값'}의 형태로 매개변수를 넣어준다.
+            */
+            //    .css({'border-color':'red','border-width':'2px'})
+                .addClass('border-red');
+            var index=0;
+            //id가 next인 요소에 클릭 이벤트를 등록
+            $('#next').click(function(){
+                $('.res').children().removeClass('border-red');
+                $('.res').children().eq(++index).addClass('border-red');
+                var cnt=$('.res').children().length;
+                if(index==5){
+                    index=-1; 
+                }                
+            })
+            $('#prev').click(function(){
+                $('.res').children().removeClass('border-red');                
+                if(index==-1){
+                    index=5;
+                }
+                $('.res').children().eq(--index).addClass('border-red');
+                
+            })
+            
+        })
+    </script>
+    
+</body>
+</html>
