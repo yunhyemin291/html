@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문 예제</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .main-q{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>설문지</h1>
+    <div class="question">
+        <div class="main-q">
+            <div class="sub-q">
+                <span>질문1</span>
+                <input type="text" placeholder="질문을 입력하세요">
+                <button>확인</button>
+            </div>
+        </div>    
+    </div>
+    
+    <button class="main-btn">질문추가</button>
+    <script>    
+        $(function(){
+            var cnt=1;
+            $('.main-btn').click(function(){                
+                var str=
+                '<div class="main-q">'+
+                    '<div class="sub-q">'+
+                        '<span>질문'+ ++cnt+'</span> '+
+                        '<input type="text" placeholder="질문을 입력하세요"> '+
+                        '<button>확인</button>'+
+                    '</div>'+
+                '</div>';
+                $('.question').append(str);
+            })
+        })
+        
+
+    </script>
+</body>
+</html>
