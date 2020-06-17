@@ -1,0 +1,348 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    min-width: 1190px;
+}
+.container{
+    width: 1190px;
+    margin: 0 auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* whale 박스 관련 css */
+.input-search{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    width: 444px;
+    height: 24px;
+    margin: 1px;
+    padding: 13px;    
+    color: #000;
+    outline: 0;
+    background-color: #fff;
+    border: 0;
+}
+
+.box-whale{
+    height: 49px;
+    background-color: rgb(0,203,174);
+}
+.link-whale{
+    display: block;
+    width: 100%;
+    height: 49px;
+}
+.icon-whale{
+    display: block;
+    margin-top: 9px;
+    width: 110px;
+    height: 30px;    
+    background-position: -276px -225px;
+    float: left;
+}
+.img-banner-whale{
+    display: block;
+    float: left;
+    margin-left: 120px;
+}
+.banner-text{
+    font-weight: 700;
+    margin-left: 388px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 49px;
+    letter-spacing: -.25px;
+}
+.bn-st{
+    text-decoration: underline;
+}
+.download{
+    color: #00cbae;
+    background-color: #fff1c0;
+    font-size: 11px;
+    width: 68px;
+    height: 28px;
+    margin-left: 20px;
+    letter-spacing: -1px;
+    border: 0;
+    border-radius: 2px;
+}
+.banner-close{
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 49px;
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+.icon-banner-close{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    vertical-align: -7px;
+    background-position: -429px -116px;
+}
+/* 서비스메뉴 관련 css */
+.service-area{
+    position: absolute;
+    top: 12px;
+    right: 27px;
+}
+.naver-home{
+    font-size: 11px;
+    float: left;
+    color: #404040;
+}
+.icon-naver-home{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: -3px 0 0 3px;
+    content: '';
+    vertical-align: top;
+    background-position: -391px -225px;
+}
+.service-bar{
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 7px;
+    background-color: #e4e8eb;
+}
+.jr-naver{
+    float: left;
+}
+.icon-jr-naver{
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    margin: 3px;
+    vertical-align: top;
+    background-position: -348px -260px;
+}
+.icon-jr-naver-hover{
+    display: inline-block;
+    width: 60px;
+    height: 10px;
+    margin: 3px;
+    vertical-align: top;
+    background-position: -214px -308px;
+}
+.happybean{
+    float: left;
+    margin-left: 6px;
+}
+.icon-happybean{
+    display: inline-block;
+    width: 34px;
+    height: 11px;
+    margin: 3px 3px 2px;
+    vertical-align: top;
+    background-position: -253px -323px;
+}
+.icon-happybean-hover{
+    display: inline-block;
+    width: 34px;
+    height: 11px;
+    vertical-align: top;
+    background-position: -214px -323px;
+}
+/* 검색창 관련 css */
+.box-container-search{
+    height: 161px;
+}
+.link-naver{
+    display: block;
+    width: 222px;
+    height: 52px;
+    position: absolute;
+    top: 48px;
+    left:18px;
+}
+.logo-naver{
+    display: block;
+    width: 222px;
+    height: 52px;
+    background-position:0 -161px;
+}
+.green-window{
+    width: 582px;
+    height: 52px;
+    border: 2px solid #19ce60;
+    border-radius: 2px;
+    position: absolute;
+    top: 52px;
+    left: 270px;
+}
+.search{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 56px;
+    background-color: #19ce60;
+    border: 0;
+    cursor: pointer;
+    
+}
+.icon-search{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    background-position: -429px -172px;
+}
+.arw{
+    position: absolute;
+    top: 0;
+    right: 64px;
+    bottom: 0;
+    width: 22px;    
+}
+.icon-arw{
+    display: inline-block;
+    width: 10px;
+    height: 5px;
+    vertical-align: top;
+    background-position: -429px -394px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0 0 -5px;
+}
+.keyboard{
+    position: absolute;
+    z-index: 400;
+    top: 0;
+    right: 84px;
+    bottom: 0;
+    width: 36px;
+}
+.icon-keyboard{
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    vertical-align: top;
+    background-position: -400px -276px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -10px;
+    
+}
+/* 메뉴관련 css */
+.box-container-menu{
+    position: relative;
+    height: 50px;
+    border-top: 1px solid rgba(0,0,0,.12);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.group-nav{
+    position: relative;
+    overflow: hidden;
+    padding: 11px 220px 11px 0;
+}
+.list-nav+.list-nav{
+    margin-left: 18px;
+}
+.list-nav{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 30px;
+    float: left;
+    letter-spacing: -.3px;
+    color: #000;    
+}
+.item-nav{
+    float: left;
+}
+.item-nav+.item-nav{
+    margin-left: 18px;
+    
+}
+.green{
+    color: #03c75a;
+}
+.icon-mail{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin: 3px 9px 0 0;
+    vertical-align: top;
+    background-position: -429px -227px;
+}
+.icon-TV{
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    margin: 9px 2px 0 0;
+    vertical-align: top;
+    background-position: -458px -80px;
+}
+.nomal-nav{
+    color: #000;
+}
+.more-btn{
+    font-size: 13px;
+    line-height: 30px;
+    float: left;
+    min-width: 70px;
+    margin-left: 17px;
+    text-align: right;
+    color: #202020;
+}
+.more-btn:hover{
+    text-decoration: underline;
+}
+.icon-more-btn{
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    margin-left: 7px;
+    content: '';
+    vertical-align: top;
+    vertical-align: 2px;
+    background-position: -458px -432px;
+}
+/*  */
+.box-container-contents{
+    height: 2685px;    
+}
+
+.container-left{
+    width: 750px;
+    height: 2717px;
+    float: left;
+    border: 1px solid greenyellow;
+    margin: 0 auto;
+    
+}
+.container-right{
+    width: 350px;
+    height: 1614px;
+    float: right;
+    border: 1px solid greenyellow;
+    margin: 0 auto;
+    
+}
+.box-container-footer{
+    height: 423px;
+    background-color: lightgray;
+}
+/* 배경 이미지 클래스 */
+.bg-44265f{
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_main.44265f.png);
+    background-repeat: no-repeat;
+    background-size: 471px 442px;
+}
