@@ -16,21 +16,10 @@ body{
     position: relative;
 }
 /* whale 박스 관련 css */
-.input-search{
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    width: 444px;
-    height: 24px;
-    margin: 1px;
-    padding: 13px;    
-    color: #000;
-    outline: 0;
-    background-color: #fff;
-    border: 0;
-}
+
 
 .box-whale{
+    
     height: 49px;
     background-color: rgb(0,203,174);
 }
@@ -93,6 +82,9 @@ body{
     vertical-align: -7px;
     background-position: -429px -116px;
 }
+.display-none{
+    display: none;
+}
 /* 서비스메뉴 관련 css */
 .service-area{
     position: absolute;
@@ -104,7 +96,10 @@ body{
     float: left;
     color: #404040;
 }
-.icon-naver-home{
+.naver-home:hover{
+    text-decoration: underline;
+}
+.icon-naver-home{ /*.naver-home::after*/
     display: inline-block;
     width: 26px;
     height: 26px;
@@ -131,14 +126,10 @@ body{
     vertical-align: top;
     background-position: -348px -260px;
 }
-.icon-jr-naver-hover{
-    display: inline-block;
-    width: 60px;
-    height: 10px;
-    margin: 3px;
-    vertical-align: top;
+.jr-naver:hover>.icon-jr-naver{
     background-position: -214px -308px;
 }
+
 .happybean{
     float: left;
     margin-left: 6px;
@@ -151,13 +142,10 @@ body{
     vertical-align: top;
     background-position: -253px -323px;
 }
-.icon-happybean-hover{
-    display: inline-block;
-    width: 34px;
-    height: 11px;
-    vertical-align: top;
+.happybean:hover>.icon-happybean{
     background-position: -214px -323px;
 }
+
 /* 검색창 관련 css */
 .box-container-search{
     height: 161px;
@@ -184,6 +172,19 @@ body{
     position: absolute;
     top: 52px;
     left: 270px;
+}
+.input-search{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    width: 444px;
+    height: 24px;
+    margin: 1px;
+    padding: 13px;    
+    color: #000;
+    outline: 0;
+    background-color: #fff;
+    border: 0;
 }
 .search{
     position: absolute;
@@ -221,6 +222,122 @@ body{
     left: 50%;
     margin: -2px 0 0 -5px;
 }
+.icon-arw-up{    
+    background-position: -361px -308px;
+}
+.auto-frame{
+    background-color: rgb(255, 255, 255);
+    display: none;
+    position: absolute;
+    z-index: 300;
+    top: 54px;
+    left: -2px;
+    width: 586px;
+    
+}
+.display-block{    
+    display: block;
+}
+
+.auto-frame-base{    
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #bec8d8;
+    background-color: #fff;
+    color: #666;
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 18px;
+    
+}
+.info-words{
+    padding: 17px 15px 15px;
+    font-size: 12px;
+    line-height: 23px;
+}
+.info-words-menu{    
+    clear: both;
+    width: 100%;
+    height: 16px;
+    padding: 8px 0;
+    border: 1px solid #ebeef3;
+    border-width: 1px 0 0;
+    background: #f9fafc;
+    color: #666;
+    font-size: 11px;
+    line-height: 1.3em;
+    letter-spacing: -1px;
+}
+.words-menu-1{
+    float: left;
+    padding: 2px 0 0 12px;
+}
+.words-help{
+    margin: 0 3px;
+    color: #666;
+}
+.words-help:hover{
+    text-decoration: underline;
+}
+.words-bar{
+    display: inline-block;
+    height: 10px;
+    margin: -1px 4px 1px;
+    border-left: 1px solid #e3e7ee;
+    background: transparent none;
+    vertical-align: middle;
+}
+.words-report{
+    color: #00a617;
+}
+.words-report:hover{
+    text-decoration: underline;
+}
+.words-menu-2{
+    float: right;
+    padding: 2px 12px 0 0;
+}
+.words-turnoff{
+    margin: 0 3px;
+    color: #666;
+}
+.words-turnoff:hover{
+    text-decoration: underline;
+}
+.words-turnon{
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    bottom: 32px;
+    right: 16px;
+    height: 18px;
+    padding: 3px 4px 0;
+    line-height: 18px;
+    color: #444;
+    border: 1px solid #00c73c;
+    background-color: #f6fbf7;
+    z-index: 10;
+}
+.display-inline{
+    display: inline;
+}
+.icon-serch-spot{
+    display: inline-block;
+    
+    background: url(https://ssl.pstatic.net/sstatic/search/pc/img/atcmp_spat_v7.png) no-repeat;
+    
+    color: transparent;
+    text-indent: 0;
+    width: 1px;
+    height: 13px;
+    padding-left: 23px;
+    margin-top: 1px;
+    background-position: -34px -64px;    
+    vertical-align: top;      
+}
+
 .keyboard{
     position: absolute;
     z-index: 400;
@@ -238,11 +355,28 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -6px 0 0 -10px;
-    
+    margin: -6px 0 0 -10px;    
 }
-/* 메뉴관련 css */
+.keyboard:hover>.icon-keyboard{
+    background-position: -64px -404px;
+}
+.msg-keyboard{    
+    position: absolute;
+    top: 42px;
+    left: -16px;
+    
+    display: none;
+    width: 68px;
+    height: 37px;
+    vertical-align: top;
+    background-position: -161px -115px;
+}
+.keyboard:hover>.msg-keyboard{
+    display: inline-block;
+}
+/* 메인 메뉴 관련 css */
 .box-container-menu{
+    
     position: relative;
     height: 50px;
     border-top: 1px solid rgba(0,0,0,.12);
@@ -315,12 +449,73 @@ body{
     vertical-align: 2px;
     background-position: -458px -432px;
 }
+/* 더보기 메뉴 관련 css */
+.group-nav-open{
+    z-index: 500;
+}
+.group-nav-open>.more-btn{
+    color: #0ecd5a;
+}
+
+
+.service-nav{
+    width: 1130px;
+    height: 289px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    left: 0;    
+    padding: 20px 30px 22px;
+    border-top: 1px solid #e4e8eb;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.12);
+}
+.service-group-nav{
+    display: table;
+    overflow: hidden;
+    width: 1128px;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #e4e8eb;
+}
+.service-group-list{
+    font-size: 13px;
+    line-height: 26px;
+    display: table-cell;
+    padding: 0 18px 0 19px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.service-group-list+.service-group-list{
+    border-left: 1px solid #e4e8eb;    
+}
+.service-title{
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #000;
+}
+
+.service-data>a{    
+    text-decoration: none;
+    color: inherit;
+}
+.service-data>a:hover{
+    text-decoration: underline;
+}
+
 /*  */
 .box-container-contents{
+    
     height: 2685px;    
 }
 
 .container-left{
+    display: none;
     width: 750px;
     height: 2717px;
     float: left;
@@ -329,6 +524,7 @@ body{
     
 }
 .container-right{
+    display: none;
     width: 350px;
     height: 1614px;
     float: right;
