@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .ad{
+            width: 750px;
+            height: 135px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .link-ad{
+            display: block;
+            height: 135px;
+        }
+        .link-ad>img{
+            float: left;
+        }
+        .link-ad:first-of-type{
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad">
+        <a href="#" class="link-ad">
+            <img src="https://ssl.pstatic.net/tveta/libs/1282/1282632/f5d52b67356d647d98f6_20200622094726737.jpg" alt="" width="750px" height="135px">
+        </a>
+        <a href="#" class="link-ad">
+            <img src="https://ssl.pstatic.net/tveta/libs/1282/1282632/3e1512f09fe372577f5e_20200622094720733.jpg" width="750" height="135">
+        </a>
+        <a href="#" class="link-ad">            
+            <img src="https://ssl.pstatic.net/tveta/libs/1282/1282632/f7e0d0b5ed8afe57bc73_20200622094707792.jpg" width="750" height="135">
+        </a>
+    </div>
+    <script>
+        $(function(){
+            setInterval(function(){
+                $('.link-ad').first().animate({'margin-top':'-135px'},300,function(){
+                    $(this).detach().appendTo('.ad').css('margin-top','0px').removeAttr('style');
+                    
+                    /* 
+                    $(A).prepend(B):A요소 안의 제일 앞에 B를 html코드로 추가해라
+                    $(A).prependTo(B):B요소 안의 제일 앞에 A를 html코드로 추가해라
+                    */
+                });
+
+            },1000)
+        })
+    </script>
+</body>
+</html>
