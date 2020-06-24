@@ -4,4 +4,7 @@ $(function(){
             $(this).detach().appendTo('.box-rolling-newslist').css('margin-top','0px').removeAttr('style');
         });
     },2000)
+
+   
+    
 })
