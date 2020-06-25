@@ -544,9 +544,9 @@ body{
 .more-btn.fold::after{
         background-position: -458px -420px;
 }
-.box-service-menu{    
-    position: absolute;
-   
+.box-service-menu{
+    display: none; 
+    position: absolute;   
     top: 11px;
     right: 0;
     width: 220px;
@@ -555,6 +555,7 @@ body{
     text-decoration: none;
     font-size: 12px;
     cursor: pointer
+    
 }
 .link-service-more{
     display: inline-block;
@@ -1169,6 +1170,172 @@ body{
 .btn-next:hover::before{
     background-position: -265px -232px;
 }
+.rolling-wrap{
+    height: 100%;
+}
+.eg-flick-viewport{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+    height: 47px;
+}
+
+.eg-flick-panel{
+    width: 843px;
+    position: absolute;
+    left: 0px;
+    float: left;
+}
+
+.card-news{
+    width: 265px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 14px 0 13px 16px;
+    text-decoration: none;
+    color: inherit;
+    
+}
+.news-badge{
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    float: left;
+    height: 18px;
+    margin-right: 8px;
+    padding: 0 7px;
+    vertical-align: top;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    text-decoration: none;
+    font-style: normal;
+}
+.news{
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #404040;
+}
+.card-weather{
+    width: 265px;
+    font-size: 13px;
+    line-height: 29px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 9px 0 9px 16px;
+}
+
+
+.ico-w07{
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    vertical-align: top;
+    background-position: 0 -68px;  
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2020/sp_weather_time.284fc7.png);
+    background-repeat: no-repeat;
+    background-size: 199px 165px;
+}
+
+
+.current-box{
+    float: left;
+}
+.current{
+    font-size: 15px;
+    vertical-align: top;
+}
+.state{
+    margin-left: 5px;
+}
+.degree-box{
+    float: left;
+    margin-left: 9px;
+}
+.min{
+    color: #2586ee;
+}
+.max{
+    color: #e9564a;
+}
+.max::before{
+    display: inline-block;
+    width: 5px;
+    height: 11px;
+    margin: 0 3px;
+    content: '';
+    vertical-align: top;
+    vertical-align: -1px;
+    background-position: -417px -131px;
+}
+.location{
+    font-size: 12px;
+    display: block;
+    overflow: hidden;
+    padding-left: 9px;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: grey;
+}
+.card-air{
+    width: 265px;
+    line-height: 18px;
+    display: inline-block;
+    overflow: hidden;
+    padding: 14px 0 15px 16px;
+    white-space: nowrap;
+}
+.list-air{
+    float: left;
+    overflow: hidden;
+}
+.air-item{
+    float: left;
+    color: #505050;
+    font-size: 12px;
+}
+.air-item>.state{
+    font-size: 13px;
+    margin-left: 8px;
+    color: #202020;
+}
+.state-good{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+    background-position: -382px -357px;
+}
+.air-item+.air-item::before{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 0 10px;
+    content: '';
+    vertical-align: -1px;
+    background-color: #e4e8eb;
+}
+.da-brand{
+    position: relative;
+}
+iframe{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    border: 0;
+}
+
+/*  */
 .box-container-footer{
     height: 423px;
     background-color: lightgray;
@@ -1176,6 +1343,8 @@ body{
 }
 
 /* 배경 이미지 클래스 */
+.state-good,
+.max::before,
 .btn-prev::before,
 .btn-next::before,
 .link-news-stand::before,
@@ -1193,9 +1362,7 @@ body{
     background-repeat: no-repeat;
     background-size: 471px 442px;
 }
-.display-none{
-    display: none;
-}
+
 .display-block{    
     display: block;
 }
@@ -1204,4 +1371,10 @@ body{
 }
 .display{
     display: inline-block;
+}
+.display-none{
+    display: none;
+}
+a{
+    color: inherit;
 }

@@ -38,7 +38,7 @@ $(function(){
     $('.more-btn').click(function(){
         
         $('.service-nav.set').toggleClass('display-none');
-		$('.box-service-menu.display').toggleClass('display-none');
+		$('.box-service-menu.set').toggleClass('display');
         $('.more-btn').toggleClass('display-none');
         
         
@@ -108,4 +108,15 @@ $(function(){
         $(this).toggleClass('active');
         $(this).siblings().toggleClass('disable');
     })
+$('.btn-prev').click(function(){
+    $('.eg-flick-panel').children().last().detach().prependTo('.eg-flick-panel').css('margin-left','-281px')
+    $('.eg-flick-panel').children().first().animate({'margin-left':'0'},400)      
+    
+})
+$('.btn-next').click(function(){
+    $('.eg-flick-panel').children().first().animate({'margin-left':'-281px'},400,function(){
+        $(this).detach().appendTo('.eg-flick-panel').removeAttr('style');
+    })
+})
+
 })

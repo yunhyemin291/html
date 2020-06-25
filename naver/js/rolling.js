@@ -5,6 +5,22 @@ $(function(){
         });
     },2000)
 
-   
     
+    var cardRollingNum=cardRolling();
+    $('.card-wrap').hover(function(){
+        //마우스가 요소 안으로 들어갈때
+        clearInterval(cardRollingNum);
+    },function(){
+        //마우스가 요소 밖으로 나갈때
+        cardRollingNum = cardRolling();
+    })
+
+
+    function cardRolling(){
+        return setInterval(function(){
+            $('.eg-flick-panel').children().first().animate({'margin-left':'-281px'},400,function(){
+                $(this).detach().appendTo('.eg-flick-panel').removeAttr('style');
+            });
+        },3000)
+    }    
 })
