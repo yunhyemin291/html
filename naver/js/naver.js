@@ -118,5 +118,68 @@ $('.btn-next').click(function(){
         $(this).detach().appendTo('.eg-flick-panel').removeAttr('style');
     })
 })
+$('.box-theme-wrap .btn-tab').click(function(e){
+    e.preventDefault();
+    $('.box-theme-wrap .btn-tab').attr('aria-selected','false');
+    $(this).attr('aria-selected','true');
+    themeBtnView();
+    themeBodyView();
+    /* 
+    $(선택자).attr('속성명',값A') : 해당 요소의 속성의 값을 값A로 설정
+    $(선택자).attr('속성명') : 해당 요소의 속성의 값을 가져옴
+    $(선택자).prop('속성명',값A') : 해당 요소의 속성의 값을 값A로 설정
+    $(선택자).prop('속성명') : 해당 요소의 속성의 값을 가져옴
+    */
+})
+$('.tm-btn-prev').click(function(e){
+    e.preventDefault();
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-job')){
+        $('.list-category').animate({'margin-left':'0px'},400)
+    }
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-book')){
+        $('.list-category').animate({'margin-left':'-750px'},400)
+    }
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-show')){
+        $('.list-category').animate({'margin-left':'-1500px'},400)
+    }
+    $('.btn-tab[aria-selected=true]').attr('aria-selected','false').
+        parent().prev().find('.btn-tab').attr('aria-selected','true');
+    themeBtnView();
+    themeBodyView();
+})
+$('.tm-btn-next').click(function(e){
+    e.preventDefault();
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-movie')){
+        $('.list-category').animate({'margin-left':'-750px'},400)
+    }
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-marry')){
+        $('.list-category').animate({'margin-left':'-1500px'},400)
+    }
+    if($('.btn-tab[aria-selected=true]').hasClass('tab-farm')){
+        $('.list-category').animate({'margin-left':'-2250px'},400)
+    }
+    $('.btn-tab[aria-selected=true]').attr('aria-selected','false').
+        parent().next().find('.btn-tab').attr('aria-selected','true');
+    themeBtnView();
+    themeBodyView();
+    
+})
+themeBodyView();
+function themeBodyView(){
+    var target = $('.btn-tab[aria-selected=true]').attr('data-target');
+    $('.box-theme-body .box-body').addClass('display-none');
+    $('.box-theme-body>.'+target).removeClass('display-none');
+}
+themeBtnView();
+function themeBtnView(){
+    $('.tm-btn-prev').removeClass('display-none');
+    $('.tm-btn-next').removeClass('display-none');
+    if($('.box-theme-wrap .btn-tab').first().attr('aria-selected')=='true'){
+        $('.tm-btn-prev').addClass('display-none');
+    }
+    if($('.box-theme-wrap .btn-tab').last().attr('aria-selected')=='true'){
+        $('.tm-btn-next').addClass('display-none');
+    }
+}
 
 })
