@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .box{
+            width: 150px;
+            height: 150px;
+            background-color: salmon;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .move{
+            
+            height: 25px;
+            margin-top: 150px;
+        }
+        .box2{
+            float: left;
+        }
+        .box3{
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <button class="move btn1">박스1 이동</button>
+    <button class="move btn2">박스2 이동</button>
+    <button class="move btn3">박스3 이동</button>
+    <script>
+        $(function(){           
+            $('.btn1').click(function(){
+                if(!$(this).hasClass('return'))
+                $('.box1').stop().animate({'margin-left':'500px'},1000)
+                else
+                $('.box1').stop().animate({'margin-left':'0px'},1000)
+                $(this).toggleClass('return');
+            })
+            $('.btn2').click(function(){
+                //적용안됨. float와 같이 숫자로 표현할 수 없는 속성들은
+                //animate를 적용할 수 없다. 이와 같은 속성으로는
+                //transition,transform등이 있다.
+                $('.box2').animate({'float':'right'},1000);
+            })
+            $('.btn3').click(function(){
+                $('.box3').animate({'left':'500px'},1000,function(){
+                    $(this).animate({'left':'0'})
+                })
+            })
+        })
+        
+    </script>
+</body>
+</html>

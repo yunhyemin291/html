@@ -11,7 +11,7 @@
             height: 300px;
             margin: 0 auto;
             border: 1px solid black;
-            margin-top: calc(50vh - 150px);
+            margin-top: calc(50vh - 250px);
             padding: 20px;
             box-sizing: border-box;
         }
@@ -65,6 +65,11 @@
         .display-none{
             display: none;
         }
+        .box{
+            height: 49px;
+            line-height: 49px;
+            font-size: 25px;
+        }
     </style>
 </head>
 <body>
@@ -87,13 +92,19 @@
     </div>
     <div class="box-record">
         <div class="box-title">기록</div>
+        <div class="box-content">
+            <div class="box1 box"></div>
+            <div class="box2 box"></div>
+            <div class="box0 box"></div>
+        </div>
     </div>
     <script>
-        var cnt=0;
+        
         var ms=0;
         var s=0;
         var m=0;
         var h=0;
+        var timeArr = [];        
         var timerInterval;
         $('#start').click(function(){
             $('#start').addClass('display-none');
@@ -103,39 +114,22 @@
                 if(ms==100){
                     ms=0;
                     s++
-                    if(s<10)                   
-                    $('.second').text('0'+s);
-                    else{
-                        $('.second').text(s);
-                    }
-                    if(s==60){
-                        s=0;
-                        m++                        
-                        if(m<10){
-                            $('.minute').text('0'+m);
-                        }else{
-                            $('.minute').text(m);
-                        }
-                        if(m==60){
-                            m=0;
-                            h++;
-                            if(h<10){
-                                $('.hour').text('0'+h);
-                            }else{
-                                $('.hour').text(h);
-                            }
-                        }
-                    }                   
                 }
-                if(ms<10){
-                    $('.ms').text('0'+ms);
-                }else{
-                    $('.ms').text(ms)
+                printTime('.ms',ms);                 
+                if(s==60){
+                    s=0;
+                    m++ 
                 }
-                
-                
+                printTime('.second',s);                   
+                if(m==60){
+                    m=0;
+                    h++;
+                }
+                printTime('.minute',m);
+                printTime('hour',h);                            
             },10)
-            // function printTime()
+            $('#record').removeClass('display-none');
+            $(this).addClass('display-none')
             
         })
         $('#end').click(function(){
@@ -143,10 +137,16 @@
             $('#record').addClass('display-none');
             $('#start').removeClass('display-none');
             ms=0;s=0;m=0;h=0;
+            cnt=1;
         })
+        var cnt=1;
+
         $('#record').click(function(){
-            var str='<div>'+getTime()+'</div>'
-            $('.box-content').append(str);
+            var str=getTime();
+            cnt = cnt%3;
+            $('.box'+cnt).html(str);
+            cnt++;
+            timeArr.push(str);
         })
         function getTime(){
             var str='';
@@ -158,6 +158,12 @@
             return '0'+time;
             else
             return time;
+        }
+        function printTime(selector,time){
+            if(time<10)
+                $(selector).text('0'+time);
+            else
+                $(selector).text(time);
         }
     </script>
 </body>
