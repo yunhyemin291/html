@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .container{
+            position: absolute;
+            left: calc(50vw - 500px);
+            width: 1000px;
+               
+        }
+        .box-menu{ 
+            display: flex;
+            list-style: none;
+            padding: 0;   
+            width: 200%;      
+        }   
+        .menu{
+            overflow: hidden;
+        }     
+        .box{            
+            border: 1px solid black;
+            float: left;
+            width: 100%;
+            height: 50px;             
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;  
+            display: block;          
+        }
+        .box+.box{
+            border-left: 0;
+        }
+        .box-content{
+            width: 1000px;
+            height: 500px;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
+        .box[aria-selected="true"]{            
+            background-color: black;
+            color: white;
+        }
+        .display-none{
+            display: none !important;
+        }
+        .btn-prev,
+        .btn-next{
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 26px;
+            left: -20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .btn-next{
+            left: 1010px;            
+        }
+    </style>
+</head>
+<body>
+    <nav class="container">
+        <a href="#" class="btn-prev"><</a>
+        <a href="#" class="btn-next">></a>
+        <div class="menu">
+            <ul class="box-menu">
+                <li class="box" aria-selected="true" data-target=".box1">메뉴1</li>
+                <li class="box" data-target=".box2">메뉴2</li>
+                <li class="box" data-target=".box3">메뉴3</li>
+                <li class="box" data-target=".box4">메뉴4</li>
+                <li class="box" data-target=".box5">메뉴5</li>
+                <li class="box" data-target=".box6">메뉴6</li>
+            </ul>
+        </div>
+        
+        <div class="box-content box1">내용1</div>
+        <div class="box-content box2">내용2</div>
+        <div class="box-content box3">내용3</div>
+        <div class="box-content box4">내용4</div>
+        <div class="box-content box5">내용5</div>
+        <div class="box-content box6">내용6</div>
+    </nav>
+    <script>
+        $(function(){
+            function viewContent(){                    
+                var target =$('.box[aria-selected=true]').attr('data-target');
+                $('.box-content').addClass('display-none');
+                $(target).removeClass('display-none');                        
+            }
+            function viewBtn(){
+                var target =$('.box[aria-selected=true]').attr('data-target');
+                $('.btn-prev,.btn-next').removeClass('display-none');
+                if(target=='.box1')
+                $('.btn-prev').addClass('display-none');
+                if(target=='.box6')
+                $('.btn-next').addClass('display-none');
+            }
+            viewContent();
+            viewBtn();
+            $('.box').click(function(){
+                $('.box').attr('aria-selected','false');
+                $(this).attr('aria-selected','true');
+                viewContent();  
+                viewBtn();             
+            })
+            $('.btn-next').click(function(){
+                var target=$('.box[aria-selected=true]').attr('data-target');
+                if(target!='.box6'){
+                    $('.box[aria-selected=true]').attr('aria-selected','false')
+                    .next().attr('aria-selected','true');
+                    viewContent();  
+                    viewBtn(); 
+                    if(target=='.box3'){
+                        $('ul').animate({'margin-left':'-100%'},1000);
+                    }
+                }
+            })
+            $('.btn-prev').click(function(){
+                var target=$('.box[aria-selected=true]').attr('data-target');
+                if(target!='.box1'){
+                    $('.box[aria-selected=true]').attr('aria-selected','false')
+                    .prev().attr('aria-selected','true');
+                    viewContent();  
+                    viewBtn(); 
+                    if(target=='.box4'){
+                        $('ul').animate({'margin-left':'0'},1000);
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+</html>

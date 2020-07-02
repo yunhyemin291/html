@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .container{
+            width: 500px;
+            height: 300px;
+            
+            
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: calc(100% - 40px);
+           
+            margin: 20px;
+           
+        }
+        .input-area{
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            margin-top: 5px;
+        }
+        .reple{            
+            width: 70px;
+            height: 100%;
+            border: 1px solid black;           
+            float: left;
+            box-sizing: border-box;
+            margin-left: 10px;
+            
+        }
+        .content{
+            width: 310px;
+            height: 100%;
+            float: left;
+            margin-left: 10px;
+            box-sizing: border-box;
+        }
+        .submit{
+            width: 80px;
+            height: 100%;
+            float: left;
+            margin-left: 10px;
+            box-sizing: border-box;
+        }
+        .board{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .box-delete{
+            height: 100%;
+            
+        }
+        .delete{
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+
+    </div>
+    <div class="container">
+        <div class="box">
+         <h4>댓글</h4>
+        </div>
+        <div class="input-area">
+            <div class="reple">작성자</div>
+            <input type="text" class="content">
+            <input type="submit" class="submit" value="확인">
+        </div>
+        
+    </div>
+    <script>
+        $(function(){
+            var cnt=1;
+            $('.submit').click(function(){
+                var chat=$('.reple').text();
+                var text=$('.content').val();                
+                var str = 
+                '<div class="box-comment>'+
+                '<span class="box-head">'+chat+' : </span>'+
+                '<span class="box-body">'+text+'</span>'+
+                '<span class="delete">X</span>'+
+                '</div>';
+                $('.box').append(str);
+                $('.content').val('');
+                //추가된 삭제 버튼 클릭이벤트를 등록
+                $('.delete').click(function(){
+                    $(this).parent().remove();
+                })            
+            })
+        })
+    </script>
+</body>
+</html>
