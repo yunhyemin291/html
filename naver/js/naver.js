@@ -163,23 +163,66 @@ $('.tm-btn-next').click(function(e){
     themeBtnView();
     themeBodyView();
     
+    
 })
-themeBodyView();
-function themeBodyView(){
-    var target = $('.btn-tab[aria-selected=true]').attr('data-target');
-    $('.box-theme-body .box-body').addClass('display-none');
-    $('.box-theme-body>.'+target).removeClass('display-none');
-}
-themeBtnView();
-function themeBtnView(){
-    $('.tm-btn-prev').removeClass('display-none');
-    $('.tm-btn-next').removeClass('display-none');
-    if($('.box-theme-wrap .btn-tab').first().attr('aria-selected')=='true'){
-        $('.tm-btn-prev').addClass('display-none');
+    themeBodyView();
+    function themeBodyView(){
+        var target = $('.btn-tab[aria-selected=true]').attr('data-target');
+        $('.box-theme-body .box-body').addClass('display-none');
+        $('.box-theme-body>.'+target).removeClass('display-none');
     }
-    if($('.box-theme-wrap .btn-tab').last().attr('aria-selected')=='true'){
-        $('.tm-btn-next').addClass('display-none');
+    themeBtnView();
+    function themeBtnView(){
+        $('.tm-btn-prev').removeClass('display-none');
+        $('.tm-btn-next').removeClass('display-none');
+        if($('.box-theme-wrap .btn-tab').first().attr('aria-selected')=='true'){
+            $('.tm-btn-prev').addClass('display-none');
+        }
+        if($('.box-theme-wrap .btn-tab').last().attr('aria-selected')=='true'){
+            $('.tm-btn-next').addClass('display-none');
+        }
     }
-}
+    $('.shop-header .tab').click(function(e){
+        e.preventDefault();
+        $('.shop-header .tab').attr('aria-selected','false');
+        $(this).attr('aria-selected','true');
+        shopView();
+        var target = $(this).attr('data-target');
+        if(target=='mall'){
+            $('.group-mall').addClass('display-none');
+        }else{
+            $('.group-mall').removeClass('display-none');
+        }
+
+    })
+    /* 오른쪽 3번째 컨텐츠에서 상품/쇼핑몰/MEN이 선택되면
+    선택된 내용에 맞는 body가 보이도록 하는 함수 */ 
+    function shopView(){
+        var target= $('.shop-header .tab[aria-selected=true]').attr('data-target');
+        $('.box-shop-body>div').addClass('display-none');
+        $('.box-shop-body>.'+target).removeClass('display-none')
+    }
+    shopView();
+    tabRandom();
+    function tabRandom(){
+        var arr=[];
+        $('.link-mall').removeClass('random');
+        for( ;arr.length < 4; ){
+            var r = getRandom(1,12);
+            if(arr.indexOf(r)>=0){
+                continue;
+            }
+            arr.push(r);
+            if(r<=6){
+                $('.box-mall').eq(0).find('.link-mall').eq(r-1).addClass('random');
+            }else{
+                $('.box-mall').eq(1).find('.link-mall').eq(r-7).addClass('random');
+            }
+        }
+    }
+    function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
 
 })
