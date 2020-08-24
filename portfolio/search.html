@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MORI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/2d1c2010b9.js" crossorigin="anonymous"></script>
+    <style>
+        .hero{
+            
+        }
+        .is-ancestor{
+           
+           
+           margin-top: 40px !important;
+           
+        }
+        .is-vertical{
+            margin: 0 auto;
+        }
+        .control>.input{
+            height: 70px;
+            border: 3px solid hsl(348, 100%, 61%);
+            width: 90%;
+            font-size: 30px;
+        }
+        .fas.fa-search{
+            width: 10%;
+            font-size: 40px;
+            color: hsl(348, 100%, 61%);
+            line-height: 70px;
+            padding-left: 0px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+  <body>
+    <section class="hero is-primary ">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head is-primary">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  <img src="/mori.gif" alt="Logo">
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    review
+                  </a>
+                  <a class="navbar-item">
+                    recommend
+                  </a>
+                  <span class="navbar-item">
+                    <a class="button is-primary is-inverted">
+                      <!-- <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span> -->
+                      <span>Log In</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-white">
+                <div class="field">
+                    
+                    <div class="control">
+                      <input class="input is-danger" type="text" placeholder="제목,감독,배우..."><i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+              </article>
+              
+            </div>
+            
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification">
+              <p class="title">최근글</p>
+              <p class="subtitle">Aligned with the right tile</p>
+              <div class="content">
+                <!-- Content -->
+              </div>
+            </article>
+          </div>
+        </div>
+        
+      </div>
+  </body>
+</html>

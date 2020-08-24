@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/2d1c2010b9.js" crossorigin="anonymous"></script>
     <style>
         body{
+            width: 100vw;
             height: 100vh;
-            background-color: #43AA8B;
+            background-color: hsl(171, 100%, 41%);
         }
         .card{
             position: relative;
@@ -48,19 +49,22 @@
     </style>
 </head>
   <body>
-  <section class="section">
-    <div class="card">
-        <h1 class="title">
-            로그인
-        </h1>
-        <form class="control">
-            <input class="input is-danger" type="text" placeholder="아이디">
-            <input class="input is-danger" type="password" placeholder="비밀번호">
-            <button class="button is-danger">login</button>
-            
-        </form>
-        <div class="sign-up"><a>회원가입</a><i> </i><a>비밀번호 찾기</a></div>      
-    </div>
-  </section>
+    
+    <section class="section is-primary">
+        <div class="card">
+            <h1 class="title">
+                로그인
+            </h1>
+            <form class="control">
+                <input class="input is-danger" type="text" placeholder="아이디">
+                <input class="input is-danger" type="password" placeholder="비밀번호">
+                <button class="button is-danger">Log In</button>            
+            </form>
+            <div class="sign-up"><a>회원가입</a><i> </i><a>비밀번호 찾기</a></div>      
+        </div>
+    </section>
+
+    
+  
   </body>
 </html>
