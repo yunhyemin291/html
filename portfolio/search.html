@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/2d1c2010b9.js" crossorigin="anonymous"></script>
     <style>
-        .hero{
-            
-        }
+        
         .is-ancestor{
            
            
@@ -19,20 +17,105 @@
         .is-vertical{
             margin: 0 auto;
         }
+        .navbar-brand>.field{
+          margin-top: 10px;
+          margin-left: 10px;
+          width: 400px;
+        }
         .control>.input{
-            height: 70px;
-            border: 3px solid hsl(348, 100%, 61%);
+            height: 40px;
+            border: 3px solid #ffffff;
             width: 90%;
-            font-size: 30px;
+            font-size: 15px;
         }
         .fas.fa-search{
             width: 10%;
-            font-size: 40px;
-            color: hsl(348, 100%, 61%);
-            line-height: 70px;
-            padding-left: 0px;
-            text-align: center;
+            font-size: 30px;
+            color: #ffffff;
+            padding-top: 5px;
+            padding-left: 10px;
             cursor: pointer;
+        }
+        * {
+          box-sizing: border-box;
+        }
+        .container{
+          max-width: 1400px;
+        }
+        .tile.is-ancestor{
+          margin:0 auto;
+          
+        }
+        .heading {
+          font-size: 25px;
+          margin-right: 25px;
+        }
+
+        .fa {
+          font-size: 25px;
+        }
+
+        .checked {
+          color: hsl(348, 100%, 61%);
+        }
+
+        /* Three column layout */
+        .side {
+          float: left;
+          width: 15%;
+          margin-top: 10px;
+        }
+
+        .middle {
+          float: left;
+          width: 70%;
+          margin-top: 10px;
+        }
+
+        /* Place text to the right */
+        .right {
+          text-align: right;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+          width: 100%;
+          background-color: #f1f1f1;
+          text-align: center;
+          color: white;
+        }
+        .content>img{
+          width: 100%;
+          margin: auto;
+        }
+        .heading.title{
+          margin-top: 10px;
+         
+        }
+
+        /* Individual bars */
+        .bar-5 {width: 60%; height: 18px; background-color:hsl(171, 100%, 41%);}
+        .bar-4 {width: 30%; height: 18px; background-color: hsl(171, 100%, 41%);}
+        .bar-3 {width: 10%; height: 18px; background-color: hsl(171, 100%, 41%);}
+        .bar-2 {width: 4%; height: 18px; background-color: hsl(171, 100%, 41%);}
+        .bar-1 {width: 15%; height: 18px; background-color: hsl(171, 100%, 41%);}
+
+        /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 400px) {
+          .side, .middle {
+            width: 100%;
+          }
+          /* Hide the right column on small screens */
+          .right {
+            display: none;
+          }
         }
 
     </style>
@@ -46,8 +129,13 @@
             <div class="container">
               <div class="navbar-brand">
                 <a class="navbar-item">
-                  <img src="/mori.gif" alt="Logo">
+                  <img src="https://i.imgur.com/zNjqRUz.gif" alt="Logo">
                 </a>
+                <div class="field">                                   
+                  <div class="control">
+                    <input class="input is-danger" type="text" placeholder="제목,감독,배우..."><i class="fas fa-search"></i>
+                  </div>                 
+                </div>
                 <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                   <span></span>
                   <span></span>
@@ -78,35 +166,121 @@
             </div>
           </nav>
         </div>
-      </section>
+    </section>
+    <section class="container">
       <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-          <div class="tile">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-white">
-                <div class="field">
-                    
-                    <div class="control">
-                      <input class="input is-danger" type="text" placeholder="제목,감독,배우..."><i class="fas fa-search"></i>
-                    </div>
-                </div>
-                
-              </article>
+        <div class="tile is-parent">
+          <article class="tile is-child notification">
+            <div class="content">
               
+                <img src="/11_17_57__58f5775520a6d[X230,330].jpg">
+                <span class="heading title is-2">커피와 담배</span>
+                <span class="heading">평점</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <p>4.1 average based on 254 reviews.</p>
+                <hr style="border:3px solid #666666">
+                
+                <div class="row">
+                  <div class="side">
+                    <div>5 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-5"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>150</div>
+                  </div>
+                  <div class="side">
+                    <div>4 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-4"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>63</div>
+                  </div>
+                  <div class="side">
+                    <div>3 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-3"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>15</div>
+                  </div>
+                  <div class="side">
+                    <div>2 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-2"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>6</div>
+                  </div>
+                  <div class="side">
+                    <div>1 star</div>
+                  </div>
+                  <div class="middle">
+                    <div class="bar-container">
+                      <div class="bar-1"></div>
+                    </div>
+                  </div>
+                  <div class="side right">
+                    <div>20</div>
+                  </div>
+                </div>
+              </article>
+          </div>
+          <div class="tile is-vertical is-8">
+            <div class="tile">
+              
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <p class="title">리뷰</p>
+                  <article class="media">
+                    
+                    <div class="media-content">
+                      <div class="field">
+                        <p class="control">
+                          <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </p>
+                      </div>
+                      <nav class="level">
+                        <div class="level-left">
+                          <div class="level-item">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                          </div>
+                        </div>
+                        <div class="level-right">
+                          <div class="level-item">                            
+                            <a class="button is-danger">Submit</a>
+                          </div>
+                        </div>
+                      </nav>
+                    </div>
+                  </article>
+                </article>
+              </div>
             </div>
             
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification">
-              <p class="title">최근글</p>
-              <p class="subtitle">Aligned with the right tile</p>
-              <div class="content">
-                <!-- Content -->
-              </div>
-            </article>
-          </div>
-        </div>
-        
       </div>
+    </section>
   </body>
 </html>

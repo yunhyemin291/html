@@ -6,9 +6,53 @@
     <title>MORI</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <style>
-        .hero{
-          
-        }
+      .navbar-brand>.field{
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 400px;
+      }
+      .control>.input{
+          height: 40px;
+          border: 3px solid #ffffff;
+          width: 90%;
+          font-size: 15px;
+      }
+      .fas.fa-search{
+          width: 10%;
+          font-size: 30px;
+          color: #ffffff;
+          padding-top: 5px;
+          padding-left: 10px;
+          cursor: pointer;
+      }
+      .movie-section{
+        margin: 50px 10%;
+
+      }
+      .movie{
+        width: 100%;
+        background-color: white;
+        color: gray;
+        font-size: 30px;
+        
+      }
+      h1{
+        font-weight: 550;
+      }
+      .card{
+        margin-top: 30px;
+        width: 250px;
+        background-color: rgb(230, 230, 230);
+        padding: 5px;
+        border-radius: 4px;
+      }
+      img{
+        margin-top: 5px;
+       margin-left: 5px;
+      }
+      .content>a{
+      	font-size:10px;
+      }
     </style>
 
 </head>
@@ -22,6 +66,11 @@
                 <a class="navbar-item">
                   <img src="/mori.gif" alt="Logo">
                 </a>
+                <div class="field">                                   
+                  <div class="control">
+                    <input class="input is-danger" type="text" placeholder="제목,감독,배우..."><i class="fas fa-search"></i>
+                  </div>                 
+                </div>
                 <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                   <span></span>
                   <span></span>
@@ -64,22 +113,36 @@
             </h2>
           </div>
         </div>
-      
-        <!-- Hero footer: will stick at the bottom -->
-        <div class="hero-foot">
-          <nav class="tabs">
-            <div class="container">
-              <ul>
-                <li class="is-active"><a>Overview</a></li>
-                <li><a>Modifiers</a></li>
-                <li><a>Grid</a></li>
-                <li><a>Elements</a></li>
-                <li><a>Components</a></li>
-                <li><a>Layout</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        
+        
       </section>
+      <section class="movie-section">
+        <div class="movie">
+          <h1>최근 리뷰가 등록된 영화</h1>
+        </div>
+        <div class="card">
+          <div class="card-image">            
+              <img src="/11_17_57__58f5775520a6d[X230,330].jpg" alt="Placeholder image">            
+          </div>
+          <div class="card-content">
+            <div class="media">
+              
+              <div class="media-content">
+                <p class="title is-4">커피와 담배</p>
+                <p class="subtitle is-6">Cofee and Cigarettes 2003</p>
+                
+              </div>
+            </div>
+        
+            <div class="content">
+              
+              <a href="#">#코미디</a> <a href="#">#옴니버스</a><a href="#">#드라마</a>
+              <br>
+              
+            </div>
+          </div>
+        </div>
+        
+       </section>
   </body>
 </html>
